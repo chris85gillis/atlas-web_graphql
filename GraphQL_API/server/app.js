@@ -3,9 +3,12 @@ const { graphqlHTTP } = require('express-graphql');
 const schema = require('./schema/schema');
 const _ = require('lodash');
 const mongoose = require('mongoose');
+const cors = require('cors');
 
 const app = express();
 const mongoURI = 'mongodb+srv://chris85gillis:IGwvUJxX0eZHCt08@cluster0.9fen9wg.mongodb.net/';
+
+app.use(cors());
 
 mongoose.connect(mongoURI, {
   useNewUrlParser: true,
